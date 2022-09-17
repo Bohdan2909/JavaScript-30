@@ -54,3 +54,15 @@ const testObj = {
 // Змініть код лише під цим рядком
 const entreeValue = testObj["an entree"]; // Змініть цей рядок
 const drinkValue = testObj["the drink"]; // Змініть цей рядок
+
+//3
+const testObj = {
+  12: "Namath",
+  16: "Montana",
+  19: "Unitas"
+};
+
+// Змініть код лише під цим рядком
+const playerNumber = 16; // Змініть цей рядок
+const player = String(testObj[playerNumber]); // Змініть цей рядо
+console.log(player);
