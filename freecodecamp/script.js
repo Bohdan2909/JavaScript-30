@@ -45,15 +45,15 @@ cc('A');
 
 //2
 // Налаштування
-const testObj = {
+const testOb = {
   "an entree": "hamburger",
   "my side": "veggies",
   "the drink": "water"
 };
 
 // Змініть код лише під цим рядком
-const entreeValue = testObj["an entree"]; // Змініть цей рядок
-const drinkValue = testObj["the drink"]; // Змініть цей рядок
+const entreeValue = testOb["an entree"]; // Змініть цей рядок
+const drinkValue = testOb["the drink"]; // Змініть цей рядок
 
 //3
 const testObj = {
@@ -168,7 +168,7 @@ console.log(myArr);
 // Налаштування
 const myAr = [];
 for (let i = 9; i > 0; i -= 2) {
-  myAr.push(i)
+  myAr.push(i);
 }
 // Змініть код лише під цим рядком
 
@@ -203,3 +203,65 @@ function sum(arr, n) {
   // Змініть код лише над цим рядком
 }
 console.log(sum([2,4,5,6], 4));
+
+//16
+// Налаштування
+const contacts = [{
+    firstName: "Akira",
+    lastName: "Laine",
+    number: "0543236543",
+    likes: ["Pizza", "Coding", "Brownie Points"],
+  },
+  {
+    firstName: "Harry",
+    lastName: "Potter",
+    number: "0994372684",
+    likes: ["Hogwarts", "Magic", "Hagrid"],
+  },
+  {
+    firstName: "Sherlock",
+    lastName: "Holmes",
+    number: "0487345643",
+    likes: ["Intriguing Cases", "Violin"],
+  },
+  {
+    firstName: "Kristian",
+    lastName: "Vos",
+    number: "unknown",
+    likes: ["JavaScript", "Gaming", "Foxes"],
+  },
+];
+
+function lookUpProfile(name, prop) {
+  for (let i = 0; i < contacts.length; i++) {
+    if (contacts[i].firstName === name) {
+      if (contacts[i].hasOwnProperty(prop)) {
+        return contacts[i][prop];
+      } else {
+        return "No such property";
+      }
+    }
+  }
+  return "No such contact";
+}
+console.log(lookUpProfile("Akira", "likes"));
+
+//17
+function randomFraction() {
+
+  // Змініть код лише під цим рядком
+  let random = Math.floor(Math.random() * 10);
+  return random;
+
+  // Змініть код лише над цим рядком
+}
+console.log(randomFraction());
+
+//18
+function randomRange(myMin, myMax) {
+  // Змініть код лише під цим рядком
+  let random = Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
+  return random;
+  // Змініть код лише над цим рядком
+}
+console.log(randomRange(10, 15));
