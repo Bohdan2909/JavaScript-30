@@ -179,3 +179,27 @@ for (let i = 0; i < myA.length; i++) {
   total += myA[i];
 }
 console.log(total);
+
+//14
+function multiplyAll(arr) {
+  let product = 1;
+  // Змініть код лише під цим рядком
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+      product *= arr[i][j];
+    }
+  }
+  // Змініть код лише над цим рядком
+  return product;
+}
+//15 
+function sum(arr, n) {
+  // Змініть код лише під цим рядком
+  if (n <= 0) {
+    return 0;
+  } else {
+    return sum(arr, n - 1) + arr[n - 1];
+  }
+  // Змініть код лише над цим рядком
+}
+console.log(sum([2,4,5,6], 4));
