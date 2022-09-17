@@ -44,3 +44,13 @@ cc('K');
 cc('A');
 
 //2
+// Налаштування
+const testObj = {
+  "an entree": "hamburger",
+  "my side": "veggies",
+  "the drink": "water"
+};
+
+// Змініть код лише під цим рядком
+const entreeValue = testObj["an entree"]; // Змініть цей рядок
+const drinkValue = testObj["the drink"]; // Змініть цей рядок
