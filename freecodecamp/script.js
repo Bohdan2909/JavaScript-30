@@ -265,3 +265,33 @@ function randomRange(myMin, myMax) {
   // Змініть код лише над цим рядком
 }
 console.log(randomRange(10, 15));
+
+//19
+function convertToInteger(str) {
+  let num = parseInt(str);
+  return num;
+}
+console.log(convertToInteger('23.565gjfh'));
+
+//20
+function countdown(n) {
+  if (n < 1) {
+    return [];
+  } else {
+    const arr = countdown(n - 1);
+    arr.push(n);
+    return arr;
+  }
+}
+console.log(countdown(5));
+
+//21
+function rangeOfNumbers(startNum, endNum) {
+  if (endNum < startNum) {
+    return [];
+  }
+  const arr = rangeOfNumbers(startNum, endNum - 1);
+   arr.push(endNum);
+   return arr;
+}
+console.log(rangeOfNumbers(1, 6));
