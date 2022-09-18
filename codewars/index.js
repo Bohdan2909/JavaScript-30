@@ -42,3 +42,73 @@ function disemvowel(str) {
   let newStr = (str.replace(/A|E|I|O|U|a|e|i|o|u/g, ''));
   return newStr;
 }
+const max = (a, b) => (a == b ? a : b);
+
+const str = (0.32 * 0.22 * 0.75);
+
+console.log((str));
+
+
+ for (let i = 0; i <= 4; i++) {
+   console.log(i++);
+ } 
+ console.log('\nHey!' [1]);
+
+  // let i = 0;
+  // let c = 0;
+  // const str = 'Rolling Scopes School';
+  // while (i < str.length) {
+  //   if (str[i] === 'o') {
+  //     c++;
+  //   }
+  //   i++;
+  // }
+  console.log(c);//4
+  console.log(i);
+
+   const a = '';
+   const b = 9;
+   const c = null;
+   const d = !!(a || !b || c)
+
+   console.log(Math.min(10, 222, -5, 0, '-33'));
+
+ let w = 5;
+ console.log(++w);//6
+ console.log(w++);//5 ale razom 6/6
+;
+
+
+var last = 'John';
+
+function printName(){
+  console.log(last);
+  var last = 'Pter';
+  console.log(last);
+}
+printName();
+
+// function con(a,b){
+//   return a*b;
+// }
+// const bar = con.bind(null, 2);
+// console.log(bar(2));//4
+
+const deo = bar();
+const num = 2;
+function bar(){return num};
+console.log(bar());
+
+console.log(message);
+var message = 'Hwll';
+
+const det = {
+  name: "John",
+};
+
+function getMes(message){
+  return `${message} ${this.name}`;
+
+
+}
+console.log(getMes.apply(det, ['Hello']));
