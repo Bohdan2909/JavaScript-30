@@ -112,3 +112,21 @@ function getMes(message){
 
 }
 console.log(getMes.apply(det, ['Hello']));
+
+//7kyu Isograms
+
+function isIsogram(str) {
+ 
+  let string = str.toLowerCase();
+  for(let i = 0; i < string.length; i++){
+    for(let j = i + 1; j< string.length; j++){
+      if(string[i] === string[j]){
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+console.log(isIsogram('Bohdddan'));
+
