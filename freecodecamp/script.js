@@ -295,3 +295,35 @@ function rangeOfNumbers(startNum, endNum) {
    return arr;
 }
 console.log(rangeOfNumbers(1, 6));
+
+//22
+const s = [5, 7, 2];
+
+function editInPlace() {
+  // Змініть код лише під цим рядком
+
+  // Використання s = [2, 5, 7] може бути недійсним
+  s[0] = 2;
+  s[1] = 5;
+  s[2] = 7;
+  // Змініть код лише над цим рядком
+}
+editInPlace();
+
+//23
+function freezeObj() {
+  const MATH_CONSTANTS = {
+    PI: 3.14
+  };
+  // Змініть код лише під цим рядком
+  Object.freeze(MATH_CONSTANTS);
+
+  // Змініть код лише над цим рядком
+  try {
+    MATH_CONSTANTS.PI = 99;
+  } catch (ex) {
+    console.log(ex);
+  }
+  return MATH_CONSTANTS.PI;
+}
+const PI = freezeObj();
