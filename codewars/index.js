@@ -128,5 +128,12 @@ function isIsogram(str) {
   return true;
 }
 
+function isIsogram(str) {
+  return !str.match(/([a-z]).*\1/i);
+}
+function isIsogram(str) {
+  return !/(\w).*\1/i.test(str)
+}
+
 console.log(isIsogram('Bohdddan'));
 
