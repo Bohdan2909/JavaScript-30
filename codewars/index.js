@@ -137,3 +137,57 @@ function isIsogram(str) {
 
 console.log(isIsogram('Bohdddan'));
 
+// 7kyu Digits Explosion
+
+function explode(str) {
+  return str.split('').map(digit => {
+    let newStr = '';
+    for (let i = 0; i < digit; i++) {
+      newStr += digit;
+    }
+    return newStr;
+  }).join('');
+}
+function explode(s) {
+  return s.split("").map((e) => e.repeat(+e)).join("");
+}
+function explode(s) {
+  s = s.split("");
+  let newS = "";
+  for (let i = 0; i < s.length; i++) {
+    switch (s[i]) {
+      case "1":
+        newS = newS + "1";
+        break;
+      case "2":
+        newS = newS + "22";
+        break;
+      case "3":
+        newS = newS + "333";
+        break;
+      case "4":
+        newS = newS + "4444";
+        break;
+      case "5":
+        newS = newS + "55555";
+        break;
+      case "6":
+        newS = newS + "666666";
+        break;
+      case "7":
+        newS = newS + "7777777";
+        break;
+      case "8":
+        newS = newS + "88888888";
+        break;
+      case "9":
+        newS = newS + "999999999";
+        break;
+      case "0":
+        newS = newS + "";
+        break;
+    }
+  }
+  return newS;
+}
+console.log(explode("413"));
