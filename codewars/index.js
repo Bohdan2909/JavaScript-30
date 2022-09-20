@@ -190,4 +190,5 @@ function explode(s) {
   }
   return newS;
 }
+const explosion= s => s.replace(/\d/g, d => d.repeat(d));
 console.log(explode("413"));
