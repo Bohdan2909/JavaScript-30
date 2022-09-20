@@ -192,3 +192,6 @@ function explode(s) {
 }
 const explosion= s => s.replace(/\d/g, d => d.repeat(d));
 console.log(explode("413"));
+//8kyu Hello world
+
+const greet = () => "hello world";
