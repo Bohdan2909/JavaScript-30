@@ -333,3 +333,27 @@ const myConcat = (arr1, arr2) => arr1.concat(arr2);
 
 
 console.log(myConcat([1, 2], [3, 4, 5]));
+//25
+const sum = (...args) => {
+
+  return args.reduce((a, b) => a + b, 0);
+};
+//26
+const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+let arr2;
+
+arr2 = [...arr1]; // Змініть цей рядок
+
+console.log(arr2);
+//27
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
+};
+
+// Змініть код лише під цим рядком
+const { today, tomorrow } = HIGH_TEMPERATURES;
+
+
+// Змініть код лише над цим рядком
