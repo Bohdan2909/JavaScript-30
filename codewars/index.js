@@ -227,3 +227,14 @@ function duplicateEncode(word) {
   }
   return outPutString.join("");
 }
+
+//6 kyu N - th Fibonacci
+function nthFibo(n) {
+  let arr = [0, 1];
+  for (let i = 1; i < n; i++) {
+    arr.push(arr[i - 1] + arr[i]);
+    console.log(arr);
+  }
+  return n > 0 ? arr[n - 1] : 0;
+}
+console.log(nthFibo(4));//2
