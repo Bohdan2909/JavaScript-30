@@ -297,3 +297,27 @@ const tailEl = array => array.slice(1);
 const initEl = array => array.slice(0, -1);
 
 const lastEl = array => array[array.length - 1];
+//6kyu Array Deep Count
+function deepCount(a) {
+  return a.reduce((acc, el) => Array.isArray(el) ? acc += deepCount(el) : acc, a.length);
+}
+console.log(deepCount([1,2,3]));
+
+//6kyu Length of missing array
+function getLengthOfMissingArray(arrayOfArrays) {
+  const lengths = (arrayOfArrays || [])
+    .map(a => a ? a.length : 0)
+    .sort((a, b) => a - b);
+
+  if (lengths.includes(0)) {
+    return 0;
+  }
+
+  for (let i = 0; i < lengths.length - 1; i++) {
+    if (lengths[i] + 1 !== lengths[i + 1]) {
+      return lengths[i] + 1;
+    }
+  }
+
+  return 0;
+}
