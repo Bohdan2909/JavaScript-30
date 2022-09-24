@@ -195,3 +195,25 @@ console.log(explode("413"));
 //8kyu Hello world
 
 const greet = () => "hello world";
+
+//6kyu Handshake problem
+function getParticipants(h) {
+for (let i =0, k = 1; i<=h; i+=k++){
+   
+  console.log(k);
+}
+  
+}
+console.log(getParticipants(7));
+
+//6kyu Duplicate Encoder
+function duplicateEncode(word) {
+ return word
+   .toLowerCase()
+   .split('')
+   .map(function (a, i, w) {
+     return w.indexOf(a) == w.lastIndexOf(a) ? '(' : ')'
+   })
+   .join('');
+}
+
