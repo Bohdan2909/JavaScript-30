@@ -329,3 +329,33 @@ function nameLast(str) {
     return `${one}.${two}`;
 }
 console.log(nameLast('Bohdan Atamaniuk'));
+
+//
+
+function nbYear(p0, percent, aug, p) {
+  let years = 0;
+  for (years; p0 < p; years++) {
+    p0 += Math.floor(p0 * (percent / 100)) + aug;
+  }
+  return years;
+}
+//6kyu pair of gloves
+
+function numberOfPairs(gloves) {
+  const glove = gloves.slice().sort();
+  const pairs = [];
+
+  for (let i = 0; i < glove.length - 1; i++) {
+    if (glove[i] == glove[i + 1]) {
+      pairs.push(glove[i]);
+      i++;
+    }
+  }
+  return pairs.length;
+}
+
+//6kyu Sorting by bit
+function sortByBit(arr) {
+  const countBit = (bit) => bit.toString(2).replace(/[0]/g, '').length
+  return arr.sort((a, b) => countBit(a) === countBit(b) ? a - b : countBit(a) - countBit(b));
+}
