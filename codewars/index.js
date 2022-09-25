@@ -321,3 +321,11 @@ function getLengthOfMissingArray(arrayOfArrays) {
 
   return 0;
 }
+//Random task
+function nameLast(str) {
+  const arrStr = str.split(' ');
+  const one = arrStr[0].slice(0, 1);
+  const two = arrStr[1].slice(0, 1);
+    return `${one}.${two}`;
+}
+console.log(nameLast('Bohdan Atamaniuk'));
