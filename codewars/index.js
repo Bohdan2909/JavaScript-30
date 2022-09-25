@@ -356,6 +356,11 @@ function numberOfPairs(gloves) {
 
 //6kyu Sorting by bit
 function sortByBit(arr) {
-  const countBit = (bit) => bit.toString(2).replace(/[0]/g, '').length
+  const countBit = (bit) => bit.toString(2).replace(/[0]/g, '').length;
   return arr.sort((a, b) => countBit(a) === countBit(b) ? a - b : countBit(a) - countBit(b));
+}
+//6kyu Let's Recycle!
+function recycle(array) {
+  const materials = ['paper', 'glass', 'organic', 'plastic'];
+  return materials.map(item => array.filter(el => (el.material === item || el.secondMaterial === item)).map(el => el.type));
 }
