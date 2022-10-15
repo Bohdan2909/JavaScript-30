@@ -386,5 +386,6 @@ function positiveSum (arr) {
 }
 const positiveSum = (arr) => arr.reduce((sum, n) => n > 0 ? sum + n : sum, 0);
 
-
 console.log(positiveSum([-1,-3,-5,-6,-4]));
+
+//
