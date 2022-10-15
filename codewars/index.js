@@ -364,3 +364,27 @@ function recycle(array) {
   const materials = ['paper', 'glass', 'organic', 'plastic'];
   return materials.map(item => array.filter(el => (el.material === item || el.secondMaterial === item)).map(el => el.type));
 }
+
+//8 kyu Sum og Positive
+
+function positiveSum(arr) {
+  // const init = 0
+  let newArr = [];
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] >= 0){
+      newArr.push(arr[i])
+    }
+  }
+ return  newArr.reduce((acc, cur) => acc + cur, init = 0);
+ 
+}
+function positiveSum(arr) {
+  return arr.reduce((a,b)=> a + (b > 0 ? b : 0),0);
+}
+function positiveSum (arr) {
+  return arr.filter(x => x>=0).reduce((a, c) => a + c, 0);
+}
+const positiveSum = (arr) => arr.reduce((sum, n) => n > 0 ? sum + n : sum, 0);
+
+
+console.log(positiveSum([-1,-3,-5,-6,-4]));
