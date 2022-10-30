@@ -66,7 +66,7 @@ console.log('\nHey!' [1]);
 //   }
 //   i++;
 // }
-console.log(c);//4
+console.log(c); //4
 console.log(i);
 
 const a = '';
@@ -77,8 +77,8 @@ const d = !!(a || !b || c)
 console.log(Math.min(10, 222, -5, 0, '-33'));
 
 let w = 5;
-console.log(++w);//6
-console.log(w++);//5 ale razom 6/6
+console.log(++w); //6
+console.log(w++); //5 ale razom 6/6
 ;
 
 
@@ -251,7 +251,7 @@ function nthFibo(n) {
     return n > 0 ? arr[n - 1] : 0;
 }
 
-console.log(nthFibo(4));//2
+console.log(nthFibo(4)); //2
 
 //4 kyu Human readable duration format
 
@@ -414,11 +414,11 @@ console.log(positiveSum([-1, -3, -5, -6, -4]));
 
 
 // 7kyu Highest and Lowest
-function highAndLoww(numbers){
-  let strMax= Math.max(numbers.split(' '))
-  let strMin= Math.min(numbers.split(' '))
+function highAndLoww(numbers) {
+    let strMax = Math.max(numbers.split(' '))
+    let strMin = Math.min(numbers.split(' '))
 
-  return `${strMax} ${strMin}`
+    return `${strMax} ${strMin}`
 }
 
 console.log(highAndLoww('1 2 3 4 5'))
@@ -429,17 +429,64 @@ console.log(highAndLoww('1 2 3 4 5'))
 //7 kyu Sum of two lowest positive integers
 
 function sumTwoSmallestNumbers(numbers) {
-    let  [ a, b ] = numbers.sort((a, b) => a - b)
+    let [a, b] = numbers.sort((a, b) => a - b)
     return a + b
+}
+
+function sumTwoSmallestNumbers(numbers) {
+    let res = numbers.sort((a, b) => a - b).slice(0, 2)
+    let sum = 0;
+    for (let i = 0; i < res.length; i++) {
+        sum += res[i]
+    }
+    return sum
+}
+
+console.log(sumTwoSmallestNumbers([1, 2, 3, 5, 10]))
+
+//8 kyu A Needle in the Haystack
+
+function findNeedle(haystack) {
+    // your code here
+    const haystack = ['one', 'two', 'needle']
+    const indexEL = haystack.findIndex(el => el === 'needle')
+    console.log(indexEL);
+
+    return `found the needle at position ${indexEL}`
+}
+
+function findNeedle(haystack) {
+    return "found the needle at position " + haystack.indexOf("needle");
+}
+
+function findNeedle(array) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === 'needle')
+            return 'found the needle at position ' + i;
     }
 
-    function sumTwoSmallestNumbers(numbers) {
-       let res = numbers.sort((a,b)=>a-b).slice(0,2)
-       let sum = 0;
-       for(let i=0; i<res.length; i++){
-        sum+=res[i]
-       }
-        return sum
+}
+console.log(findNeedle);
+
+// 7kyu List Filtering
+
+function filter_list(arr) {
+    let newArr = arr.filter(el => typeof (el) !== 'string')
+    return newArr
+}
+
+function filter_list(l) {
+    return l.filter(Number.isInteger);
+}
+
+function filter_list(l) {
+    let res = [];
+    for (let  item = 0; item < l.length; item++) {
+        if (typeof l[item] === "number") {
+            res.push(l[item]);
         }
 
-console.log(sumTwoSmallestNumbers([1,2,3,5,10]))
+    }
+    return res;
+}
+console.log(filter_list([1, 2, 'aasf', '1', '123', 123]));
