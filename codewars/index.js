@@ -490,3 +490,62 @@ function filter_list(l) {
     return res;
 }
 console.log(filter_list([1, 2, 'aasf', '1', '123', 123]));
+
+//7kyu Exes and Ohs 
+function XO(str) {
+    
+let x = ''
+let o = ''
+
+for (let i = 0; i< str.length; i++){
+    if(str[i].toLowerCase() === 'x'){
+        x += str[i]
+    }else if (str[i].toLowerCase() === 'o'){
+        o += str[i]
+    }
+}
+   
+ return x.length === o.length
+}
+const XO = str => {
+    str = str.toLowerCase().split('');
+    return str.filter(el => el === 'x').length === str.filter(el => el === 'o').length;
+  }
+console.log(XO('ooxXm'));
+
+//7kyu Sum of the first nth term of Series
+function SeriesSum(n) {
+    if(0 == n) return "0.00"
+    let s = 1;
+    for(let i=1; i<n; i++) s += 1/(1+3*i);
+    return s.toFixed(2);
+  }
+  console.log(SeriesSum(4));
+
+  //7kyu Get the Middle Character
+  function getMiddle(str){
+    let odd = ''
+    let even = ''
+    let one = ''
+    
+        if(str.length % 2 == 0) {
+            let indNext = Math.floor(str.length / 2)
+            let indPrev= indNext - 1
+            odd = str[indPrev] + str[indNext]
+        }
+        if(str.length % 2 !== 0){
+            let ind = Math.floor(str.length / 2)
+            even = str[ind]
+        }
+        if (str.length === 1){
+            one = str[0]
+        }
+
+    
+   return odd || even || one
+}
+function getMiddle(s)
+{
+  return s.slice((s.length-1)/2, s.length/2+1);
+}
+console.log(getMiddle('test'));
