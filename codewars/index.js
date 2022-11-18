@@ -559,3 +559,33 @@ function getMiddle(s)
 }g
 console.log(getMiddle('test'));
 
+//7kyu Fizz Buzz
+
+const fizzBuzz = (n) => {
+    let arr = []
+    for( let i = 1; i <= n; i++ ){
+     
+        if (i % 15 === 0) {
+            arr.push("FizzBuzz");
+            } else if (i % 3 === 0) {
+            arr.push("Fizz");
+            } else if (i % 5 === 0) {
+            arr.push("Buzz");
+            } else {
+            arr.push(i);
+            }
+        
+}
+return arr
+}
+console.log(fizzBuzz(10));
+
+//8kyu Find smallest
+function findSmallestInt(args) {
+    // return args.sort((a,b) => a-b)[0]
+    return Math.min(...args)
+
+    
+  } 
+
+  console.log(findSmallestInt([78,56,232,12,8]));
