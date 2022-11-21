@@ -481,7 +481,7 @@ function filter_list(l) {
 
 function filter_list(l) {
     let res = [];
-    for (let  item = 0; item < l.length; item++) {
+    for (let item = 0; item < l.length; item++) {
         if (typeof l[item] === "number") {
             res.push(l[item]);
         }
@@ -493,90 +493,91 @@ console.log(filter_list([1, 2, 'aasf', '1', '123', 123]));
 
 //7kyu Exes and Ohs 
 function XO(str) {
-    
-let x = ''
-let o = ''
 
-for (let i = 0; i< str.length; i++){
-    if(str[i].toLowerCase() === 'x'){
-        x += str[i]
-    }else if (str[i].toLowerCase() === 'o'){
-        o += str[i]
+    let x = ''
+    let o = ''
+
+    for (let i = 0; i < str.length; i++) {
+        if (str[i].toLowerCase() === 'x') {
+            x += str[i]
+        } else if (str[i].toLowerCase() === 'o') {
+            o += str[i]
+        }
     }
-}
-   
- return x.length === o.length
+
+    return x.length === o.length
 }
 const XO = str => {
     str = str.toLowerCase().split('');
     return str.filter(el => el === 'x').length === str.filter(el => el === 'o').length;
-  }
+}
 console.log(XO('ooxXm'));
 
 //7kyu Sum of the first nth term of Series
 function SeriesSum(n) {
-    if(0 == n) return "0.00"
+    if (0 == n) return "0.00"
     let s = 1;
-    for(let i=1; i<n; i++) s += 1/(1+3*i);
+    for (let i = 1; i < n; i++) s += 1 / (1 + 3 * i);
     return s.toFixed(2);
-  }
-  console.log(SeriesSum(4));
+}
+console.log(SeriesSum(4));
 
-  //7kyu Get the Middle Character
-  function getMiddle(str){
+//7kyu Get the Middle Character
+function getMiddle(str) {
     let odd = ''
     let even = ''
     let one = ''
-    
-        if(str.length % 2 == 0) {
-            let indNext = Math.floor(str.length / 2)
-            let indPrev= indNext - 1
-            odd = str[indPrev] + str[indNext]
-        }
-        if(str.length % 2 !== 0){
-            let ind = Math.floor(str.length / 2)
-            even = str[ind]
-        }
-        if (str.length === 1){
-            one = str[0]
-        }
 
-    
-   return odd || even || one
+    if (str.length % 2 == 0) {
+        let indNext = Math.floor(str.length / 2)
+        let indPrev = indNext - 1
+        odd = str[indPrev] + str[indNext]
+    }
+    if (str.length % 2 !== 0) {
+        let ind = Math.floor(str.length / 2)
+        even = str[ind]
+    }
+    if (str.length === 1) {
+        one = str[0]
+    }
+
+
+    return odd || even || one
 }
-function getMiddle(s)
-{
-  return s.slice((s.length-1)/2, s.length/2+1);
+
+function getMiddle(s) {
+    return s.slice((s.length - 1) / 2, s.length / 2 + 1);
 }
-function getMiddle(s)
-{
-  let middle = Math.floor(s.length/2);
-  
-  return s.length % 2 === 0
-        ? s.slice(middle-1, middle+1)
-        : s.slice(middle, middle+1);
-  
-}g
+
+function getMiddle(s) {
+    let middle = Math.floor(s.length / 2);
+
+    return s.length % 2 === 0 ?
+        s.slice(middle - 1, middle + 1) :
+        s.slice(middle, middle + 1);
+
+}
+g
 console.log(getMiddle('test'));
 
 //7kyu Fizz Buzz
 
 const fizzBuzz = (n) => {
     let arr = []
-    for( let i = 1; i <= n; i++ ){
-     
+    for (let i = 1; i <= n; i++) {
+
         if (i % 15 === 0) {
             arr.push("FizzBuzz");
-            } else if (i % 3 === 0) {
+        } else if (i % 3 === 0) {
             arr.push("Fizz");
-            } else if (i % 5 === 0) {
+        } else if (i % 5 === 0) {
             arr.push("Buzz");
-            } else {
+        } else {
             arr.push(i);
-            }
-        
-}
-return arr
+        }
+
+    }
+    return arr
 }
 console.log(fizzBuzz(10));
 
@@ -585,7 +586,56 @@ function findSmallestInt(args) {
     // return args.sort((a,b) => a-b)[0]
     return Math.min(...args)
 
-    
-  } 
 
-  console.log(findSmallestInt([78,56,232,12,8]));
+}
+
+console.log(findSmallestInt([78, 56, 232, 12, 8]));
+//8kyu Reduce
+function grow(x) {
+    return x.reduce((acc, str) => acc * str, 1)
+}
+const grow = x => {
+    let res = 1;
+    for (let i = 0; i < x.length; i++) {
+      
+        res *= x[i];
+    }
+    return res;
+};
+console.log(grow([1, 4, 6, 2]));
+
+//7kyu
+
+function nextNumb(val) { 
+    for (let i=val+1;i<=9999999999;i++)
+    {
+    if (i.toString().length===[...new Set(i.toString().split(''))].length&&
+    i%2!==0&&(i%3===0)){return i}
+    }
+    
+    return "There is no\
+ possible number that fulfills those requirements"; 
+}
+console.log(nextNumb(13));
+
+//8 kyu Total amount of points
+function points(games) {
+   
+    let sum=0;
+    for (let i=0; i<games.length; ++i)
+    {
+      if (games[i][0]>games[i][2])
+        sum+=3;
+      if (games[i][0]==games[i][2])
+        sum+=1;
+    }
+    return sum;
+  }
+  const points=games=>games.reduce((output,current)=>{
+    
+    return output += current[0]>current[2] ? 3 : current[0] === current[2] ? 1 : 0;  },0)
+  console.log(points(['3:1','2:1','4:3']));
+
+  let ar = ['3:1','2:1','4:3']
+
+  console.log(ar[0][1]);//output ':';
