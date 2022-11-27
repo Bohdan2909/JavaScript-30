@@ -597,7 +597,7 @@ function grow(x) {
 const grow = x => {
     let res = 1;
     for (let i = 0; i < x.length; i++) {
-      
+
         res *= x[i];
     }
     return res;
@@ -606,36 +606,116 @@ console.log(grow([1, 4, 6, 2]));
 
 //7kyu
 
-function nextNumb(val) { 
-    for (let i=val+1;i<=9999999999;i++)
-    {
-    if (i.toString().length===[...new Set(i.toString().split(''))].length&&
-    i%2!==0&&(i%3===0)){return i}
+function nextNumb(val) {
+    for (let i = val + 1; i <= 9999999999; i++) {
+        if (i.toString().length === [...new Set(i.toString().split(''))].length &&
+            i % 2 !== 0 && (i % 3 === 0)) {
+            return i
+        }
     }
-    
+
     return "There is no\
- possible number that fulfills those requirements"; 
+ possible number that fulfills those requirements";
 }
 console.log(nextNumb(13));
 
 //8 kyu Total amount of points
 function points(games) {
-   
-    let sum=0;
-    for (let i=0; i<games.length; ++i)
-    {
-      if (games[i][0]>games[i][2])
-        sum+=3;
-      if (games[i][0]==games[i][2])
-        sum+=1;
+
+    let sum = 0;
+    for (let i = 0; i < games.length; ++i) {
+        if (games[i][0] > games[i][2])
+            sum += 3;
+        if (games[i][0] == games[i][2])
+            sum += 1;
     }
     return sum;
+}
+const points = games => games.reduce((output, current) => {
+
+    return output += current[0] > current[2] ? 3 : current[0] === current[2] ? 1 : 0;
+}, 0)
+console.log(points(['3:1', '2:1', '4:3']));
+
+let ar = ['3:1', '2:1', '4:3']
+
+console.log(ar[0][1]); //output ':';
+
+//1
+const repeatString = (str, count, esc) => {
+    let newStr = str.repeat(count)
+    return [newStr]
+}
+console.log(repeatString('yo', 3, ","))
+//2
+const checkStart = (str, substr) => str.toLowerCase().indexOf(substr) === 0 ? true : false
+
+console.log(checkStart("Incubator", "yo"))
+//3
+const truncateString = (str, count) => str.slice(0, count) + '...'
+console.log(truncateString("Всем студентам инкубатора желаю удачи!", 10));
+//4
+const getMinLengthWord = (str) => {
+    if (str === '') {
+        return null
+    }
+    // let strArr = str.split(' ').sort((a,b)=>a.length-b.length)[0]
+    let strArr = str.split(' ')
+    let endArr = str.split(' ')
+    let minWord; //[ 'Всем', 'студентам', 'инкубатора', 'желаю', 'удачи!' ]
+    for (let i = 0; i < strArr.length; i++) {
+        if (strArr[i].length < endArr[i].length) {
+
+        }
+        return strArr[i]
+    }
+
+}
+console.log(getMinLengthWord("Всем студентам инкубатора желаю удачи!"))
+//5
+const setUpperCase = (str) => {
+    let strToArr = str.toLowerCase().split(' ')
+    let newStr = []
+    for (let i = 0; i < strToArr.length; i++) {
+        newStr.push(strToArr[i][0].toUpperCase() + strToArr[i].slice(1))
+
+    }
+    return newStr
+}
+console.log(setUpperCase("всем стУдентам инкуБатора Желаю удачИ!"))
+
+//6
+// const isIncludes = (str, substr) => {
+// let cutArr = []
+//     for(let i = 0; i<str.length; i++){
+//     if(substr.includes(str[i])){
+//         cutArr.push(str[i])
+//     }
+
+//   }
+//   return cutArr.length === substr.length
+// }
+//   console.log(isIncludes("Incubator", "Cut"));
+const isIncludes = (str, substr) => {
+    const substrVal = substr.toLowerCase().split('')
+    const strVal = str.toLowerCase().split('')
+
+    return substrVal.every(el => strVal.includes(el))
+
+}
+
+console.log(isIncludes("Incubator", "Cut")) //=> true
+console.log(isIncludes("Incubator", "table")) //=> false
+console.log(isIncludes("Incubator", "inbba")) //=> true
+console.log(isIncludes("Incubator", "inba")) //=> true
+console.log(isIncludes("Incubator", "Incubatorrr")) //=> true
+
+//6 kyu Replace With Alphabet Position
+function alphabetPosition(text) {
+    return text
+    .toUpperCase()
+    .replace(/[^A-Z]/g, '')
+    .split('')
+    .map(w => w.charCodeAt(0) - 64).join(' ')
   }
-  const points=games=>games.reduce((output,current)=>{
-    
-    return output += current[0]>current[2] ? 3 : current[0] === current[2] ? 1 : 0;  },0)
-  console.log(points(['3:1','2:1','4:3']));
-
-  let ar = ['3:1','2:1','4:3']
-
-  console.log(ar[0][1]);//output ':';
+  console.log(alphabetPosition("The sunset sets at twelve o' clock"))//20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11
