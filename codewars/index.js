@@ -713,9 +713,43 @@ console.log(isIncludes("Incubator", "Incubatorrr")) //=> true
 //6 kyu Replace With Alphabet Position
 function alphabetPosition(text) {
     return text
-    .toUpperCase()
-    .replace(/[^A-Z]/g, '')
-    .split('')
-    .map(w => w.charCodeAt(0) - 64).join(' ')
+        .toUpperCase()
+        .replace(/[^A-Z]/g, '')
+        .split('')
+        .map(w => w.charCodeAt(0) - 64).join(' ')
+}
+console.log(alphabetPosition("The sunset sets at twelve o' clock")) //20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11
+
+//6kyu Find the unique number
+function findUniq(arr) {
+    let a = arr.filter((el, i, arr) => arr.indexOf(el) === arr.lastIndexOf(el))
+    return a[0]
+}
+
+function findUniq(arr) {
+    return arr.find(n => arr.indexOf(n) === arr.lastIndexOf(n));
+}
+
+function findUniq(arr) {
+    arr.sort((a, b) => a - b);
+    return arr[0] == arr[1] ? arr.pop() : arr[0]
+}
+function findUniq(arr) {
+    arr = arr.sort()
+    if (arr[0] === arr[1]){
+      return arr[arr.length -1]
+    } else {
+      return arr[0]
+    } 
   }
-  console.log(alphabetPosition("The sunset sets at twelve o' clock"))//20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11
+  const findUniq = arr => {
+    let a = arr.sort()
+    if (arr[0]=== arr[1]){
+        return arr[arr.length-1]
+    }else{
+        return arr[0]
+    }
+    
+  }
+  const findUniq = arr => arr.sort()[0] === arr[1] ? arr.pop() : arr[0];
+console.log(findUniq([2, 2, 3, 2, 2, 2]));
